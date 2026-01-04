@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { GuitarScene } from './components/GuitarScene';
 import { LessonPanel } from './components/LessonPanel';
 import { useGuitarAudio } from './hooks/useGuitarAudio';
@@ -42,6 +42,25 @@ function App() {
     reset: resetAnimation,
   } = usePlaybackAnimation();
 
+  // Auto-enable audio on first user interaction
+  useEffect(() => {
+    if (isAudioReady) return;
+
+    const handleFirstInteraction = () => {
+      enableAudio();
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+    };
+
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('keydown', handleFirstInteraction);
+
+    return () => {
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+    };
+  }, [isAudioReady, enableAudio]);
+
   // Handle chord play with animation
   const handlePlayChord = useCallback((chord: Chord) => {
     if (!isAudioReady) return;
@@ -72,11 +91,6 @@ function App() {
       <header className="app-header">
         <h1>Guitar Teacher</h1>
         <p>Learn chords, scales, and songs with 3D visualization</p>
-        {!isAudioReady && (
-          <button className="enable-audio-btn" onClick={enableAudio}>
-            Enable Audio
-          </button>
-        )}
       </header>
 
       <main className="app-main">
