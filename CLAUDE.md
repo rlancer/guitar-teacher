@@ -3,8 +3,6 @@
 ## Project Overview
 A React TypeScript Three.js application for teaching guitar. Built with Vite.
 
-**Location:** `guitar-teacher/`
-
 ## Tech Stack
 - React 18 + TypeScript
 - Vite
@@ -12,7 +10,6 @@ A React TypeScript Three.js application for teaching guitar. Built with Vite.
 
 ## Project Structure
 ```
-guitar-teacher/
 ├── src/
 │   ├── components/
 │   │   ├── Guitar3D.tsx       # 3D guitar fretboard with strings, frets, finger markers
@@ -49,7 +46,6 @@ guitar-teacher/
 
 ## Commands
 ```bash
-cd guitar-teacher
 npm install        # Install dependencies
 npm run dev        # Start dev server (localhost:5173)
 npm run build      # Production build
