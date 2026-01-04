@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.app-header {
+  padding: 1.5rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: #e94560;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+.app-header p {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* Enable Audio Button */
+.enable-audio-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.enable-audio-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(233, 69, 96, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(233, 69, 96, 0.8); }
+}
+
+/* Main content */
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Guitar container */
+.guitar-container {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guitar-instructions {
+  padding: 0.75rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* Lesson Panel */
+.lesson-panel {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mode selector */
+.mode-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-selector button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-selector button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.mode-selector button.active {
+  background: #e94560;
+  color: white;
+  box-shadow: 0 0 15px rgba(233, 69, 96, 0.5);
+}
+
+/* Options */
+.options {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e94560;
+}
+
+/* Lesson content */
+.lesson-content {
+  margin-bottom: 1.5rem;
+}
+
+/* Navigation header */
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-header button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-header button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-header span {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* Chord diagram */
+.chord-diagram {
+  text-align: center;
+}
+
+.chord-diagram h3 {
+  color: #e94560;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.chord-svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.strum-legend {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+
+.strum-on {
+  color: #4ade80;
+}
+
+.strum-off {
+  color: #666;
+}
+
+/* Chord tips */
+.chord-tips {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.chord-tips h4 {
+  color: #e94560;
+  margin-bottom: 0.5rem;
+}
+
+.chord-tips ul {
+  padding-left: 1.25rem;
+  color: #aaa;
+  font-size: 0.875rem;
+}
+
+.chord-tips li {
+  margin-bottom: 0.25rem;
+}
+
+/* Scale lesson */
+.scale-lesson h3 {
+  color: #e94560;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.scale-lesson .pattern {
+  color: #888;
+  font-family: monospace;
+  margin-bottom: 1rem;
+}
+
+.scale-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.scale-info h4 {
+  color: #e94560;
+  margin-bottom: 0.5rem;
+}
+
+.scale-info ul {
+  padding-left: 1.25rem;
+  color: #aaa;
+  font-size: 0.875rem;
+}
+
+.scale-info li {
+  margin-bottom: 0.25rem;
+}
+
+.note-count {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* Song lesson */
+.song-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.song-header h3 {
+  color: #e94560;
+  font-size: 1.5rem;
+}
+
+.song-header .artist {
+  color: #888;
+  font-style: italic;
+}
+
+.song-header .tempo {
+  color: #666;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.playback-controls {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.play-button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  background: #4ade80;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.play-button:hover:not(:disabled) {
+  background: #22c55e;
+  transform: scale(1.05);
+}
+
+.play-button:disabled {
+  background: #4a5568;
+  color: #718096;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Tempo control */
+.tempo-control {
+  margin-top: 1rem;
+}
+
+.tempo-control label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #888;
+  font-size: 0.875rem;
+}
+
+.tempo-control input[type="range"] {
+  width: 100%;
+  max-width: 200px;
+  accent-color: #e94560;
+}
+
+.tempo-control input[type="range"]:disabled {
+  opacity: 0.5;
+}
+
+/* Current note indicator */
+.current-note {
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background: rgba(74, 222, 128, 0.2);
+  border-radius: 6px;
+  color: #4ade80;
+  font-size: 0.875rem;
+}
+
+/* Disabled navigation buttons */
+.nav-header button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-header button:disabled:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Disabled progression items */
+.progression-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.progression-item:disabled:hover {
+  background: transparent;
+  color: #aaa;
+}
+
+.current-chord {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(233, 69, 96, 0.2);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.current-chord h4 {
+  color: #888;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.current-chord .chord-name {
+  color: #e94560;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.current-chord .lyrics {
+  color: #aaa;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.chord-progression h4 {
+  color: #888;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.progression-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.progression-item {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: transparent;
+  color: #aaa;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.progression-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.progression-item.active {
+  background: #e94560;
+  border-color: #e94560;
+  color: white;
+}
+
+/* Finger legend */
+.finger-legend {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.finger-legend h4 {
+  color: #888;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.finger {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.finger-1 {
+  background: rgba(52, 152, 219, 0.3);
+  color: #3498db;
+}
+
+.finger-2 {
+  background: rgba(46, 204, 113, 0.3);
+  color: #2ecc71;
+}
+
+.finger-3 {
+  background: rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+}
+
+.finger-4 {
+  background: rgba(243, 156, 18, 0.3);
+  color: #f39c12;
+}
+
+/* Footer */
+.app-footer {
+  padding: 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #666;
+  font-size: 0.875rem;
+}
