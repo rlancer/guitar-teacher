@@ -58,3 +58,18 @@ npm run build      # Production build
 4. Horse with No Name - America
 5. Stand By Me - Ben E. King
 6. Sweet Home Alabama - Lynyrd Skynyrd
+
+## Deployment
+
+**Live Site:** https://guitar-teacher.pages.dev
+
+**GitHub Repo:** https://github.com/rlancer/claude-music-2
+
+### Cloudflare Pages
+- Project name: `guitar-teacher`
+- Auto-deploys on push to `main` via GitHub Actions
+- Workflow file: `.github/workflows/deploy.yml`
+
+### GitHub Secrets
+- `CLOUDFLARE_API_TOKEN` - Cloudflare API token with "Edit Cloudflare Pages" permissions
+- `CLOUDFLARE_ACCOUNT_ID` - Cloudflare account ID
